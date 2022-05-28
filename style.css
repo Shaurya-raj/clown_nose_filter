@@ -1,6 +1,6 @@
 canvas{
     border: 3px solid blueviolet;
-    margin-top: 10px;
+    margin-top: 50px;
     animation: colorChange 5s 2s infinite;
 
 }

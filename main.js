@@ -1,12 +1,15 @@
 nose_x=""
 nose_y=""
 
-function preload(){}
+function preload(){
+    clown_img=loadImage("https://i.postimg.cc/Fz9N2ptv/download-removebg-preview.png");
+}
 
 function setup(){
     canvas=createCanvas(400,400);
     canvas.center();
-    video=createCapture(VIDEO); 
+    video=createCapture(VIDEO);
+    video.size(400,400); 
     video.hide();
     posenet=ml5.poseNet(video,modelLoaded);
     posenet.on("pose",getPoses);
@@ -26,9 +29,15 @@ function getPoses(results){
 }
 
 function draw(){
- image(video,0,0,400,400);   
+ image(video,0,0,400,400);
+ fill("red");
+ stroke("orange");
+ strokeWeight(4);
+ //circle(nose_x,nose_y,30);
+image(clown_img,nose_x-10,nose_y-15,30,30);
 }
 
 function take_pic(){
     save("My picture.png");
 }
+
